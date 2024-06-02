@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            background: #f4f4f4;
+            margin-bottom: 5px;
+        }
+        .task.completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    <input type="text" id="taskInput" placeholder="Nueva tarea">
+    <button onclick="addTask()">Agregar</button>
+    <ul id="taskList" class="task-list"></ul>
+
+    <h2>Tareas Completadas</h2>
+    <ul id="completedTaskList" class="task-list"></ul>
+
+    <h2>Tareas Eliminadas</h2>
+    <ul id="deletedTaskList" class="task-list"></ul>
+
+    <script src="main.js"></script>
+</body>
+</html>
