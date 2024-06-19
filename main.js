@@ -55,7 +55,10 @@ function renderCompletedTasks() {
     completedTasks.forEach(task => {
         const li = document.createElement('li');
         li.className = 'task completed';
-        li.innerHTML = `<span>${task.text}</span>`;
+        li.innerHTML = `
+            <span>${task.text}</span>
+            <button onclick="removeCompletedTask(${task.id})">Borrar</button>
+        `;
         completedTaskList.appendChild(li);
     });
 }
@@ -64,8 +67,11 @@ function renderDeletedTasks() {
     deletedTaskList.innerHTML = '';
     deletedTasks.forEach(task => {
         const li = document.createElement('li');
-        li.className = 'task';
-        li.innerHTML = `<span>${task.text}</span>`;
+        li.className = 'task deleted';
+        li.innerHTML = `
+            <span>${task.text}</span>
+            <button onclick="removeTask(${task.id})">Borrar</button>
+        `;
         deletedTaskList.appendChild(li);
     });
 }
@@ -97,6 +103,18 @@ function deleteTask(id) {
             return false;
         }
     });
+    saveTasks();
+    renderTasks();
+}
+
+function removeTask(id) {
+    deletedTasks = deletedTasks.filter(task => task.id !== id);
+    saveTasks();
+    renderTasks();
+}
+
+function removeCompletedTask(id) {
+    completedTasks = completedTasks.filter(task => task.id !== id);
     saveTasks();
     renderTasks();
 }

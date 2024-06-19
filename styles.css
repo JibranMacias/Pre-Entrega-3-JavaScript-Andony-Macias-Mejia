@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #dd983d;
     --secondary-color: #f4f4f4;
@@ -15,6 +16,11 @@ body {
     margin: 0;
     padding: var(--padding);
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    background-image: url('/0e7ee8fba44868abad61b83d58cea301.png');
 
 h1, h2 {
     color: var(--primary-color);
