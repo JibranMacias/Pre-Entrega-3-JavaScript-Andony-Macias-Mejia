@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #dd983d;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --completed-color: #d1ffd1;
+    --deleted-color: #ffd1d1;
+    --padding: 10px;
+    --margin: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: var(--text-color);
+    margin: 0;
+    padding: var(--padding);
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+    text-shadow: 
+    -2px -1px 0 #000000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+input[type="text"] {
+    padding: var(--padding);
+    margin-bottom: var(--margin);
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: var(--padding);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding);
+    background: var(--secondary-color);
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.task:hover {
+    background: lighten(var(--secondary-color), 5%);
+}
+
+.task.completed {
+    text-decoration: line-through;
+    background-color: var(--completed-color);
+}
+
+.task.deleted {
+    background-color: var(--deleted-color);
+}
+
+.task button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.task button:hover {
+    color: var(--primary-color);
+}
